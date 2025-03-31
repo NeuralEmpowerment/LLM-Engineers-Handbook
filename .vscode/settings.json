@@ -12,4 +12,18 @@
         "notebook.source.fixAll": "explicit",
         "notebook.source.organizeImports": "explicit"
     },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1d5f9a",
+        "titleBar.activeBackground": "#f542ec",
+        "titleBar.activeForeground": "#FFFFFF",
+        "activityBar.foreground": "#FFFFFF",
+        "activityBarBadge.background": "#FF7043",
+        "activityBarBadge.foreground": "#FFFFFF",
+        "statusBar.background": "#4CAF50",
+        "statusBar.foreground": "#FFFFFF",
+        "statusBarItem.remoteBackground": "#FF80AB",
+        "statusBarItem.remoteForeground": "#FFFFFF",
+        "tab.activeBorder": "#42A5F5",
+        "tab.inactiveForeground": "#616161"
+    },
 }
