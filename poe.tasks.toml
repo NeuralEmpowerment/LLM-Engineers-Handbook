@@ -90,10 +90,33 @@ bash-docker-container = "docker run --rm -it --network host --env-file .env llmt
 
 lint-check = "poetry run ruff check ."
 format-check = "poetry run ruff format --check ."
+type-check = "poetry run mypy"
+type-check-all = "poetry run mypy ."
+type-check-strict = "poetry run mypy --strict"
+type-check-incremental = "poetry run mypy --incremental"
+type-check-report = "poetry run mypy --html-report ./mypy_report"
+type-check-examples = "poetry run mypy examples"
+lint-check-examples = "poetry run ruff check examples"
+format-check-examples = "poetry run ruff format --check examples"
 lint-check-docker = "sh -c 'docker run --rm -i hadolint/hadolint < Dockerfile'"
 gitleaks-check = "docker run -v .:/src zricethezav/gitleaks:latest dir /src/llm_engineering"
 lint-fix = "poetry run ruff check --fix ."
 format-fix = "poetry run ruff format ."
+
+[tool.poe.tasks.check-all]
+sequence = [
+    "lint-check",
+    "format-check"
+]
+ignore_fail = true
+
+[tool.poe.tasks.check-examples]
+sequence = [
+    "type-check-examples",
+    "lint-check-examples",
+    "format-check-examples"
+]
+ignore_fail = true
 
 ###############################################################################
 ##                           PLATFORM-SPECIFIC COMMANDS                      ##
